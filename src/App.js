@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import StatusBar from "./Components/StatusBar";
 import Customer from "./Components/Customer";
+import Badges from "./Components/Badges";
 import "./App.css";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
           <main>
             <Route path="/" exact component={Sales} />
             <Route path="/customers/" component={Customers} />
+            <Route path="/badges" component={Badges} />
           </main>
         </div>
       </Router>
