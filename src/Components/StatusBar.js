@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Avatar from "@atlaskit/avatar";
 import Button from "@atlaskit/button";
 import HipchatChevronUpIcon from "@atlaskit/icon/glyph/hipchat/chevron-up";
 import HipchatChevronDownIcon from "@atlaskit/icon/glyph/hipchat/chevron-down";
+import StatusBadge from "./StatusBadge/StatusBadge";
 
 const StatusBar = ({ link = true, completionProgress = 1 }) => {
   const [visibility, setVisibility] = useState(true);
@@ -38,7 +38,7 @@ const StatusBar = ({ link = true, completionProgress = 1 }) => {
         {visibility && (
           <>
             <div className="rank">
-              <Avatar size="xlarge" />
+              <StatusBadge completionProgress={completionProgress} />
               <span className="rank-title">{rank}</span>
             </div>
             Hello here is some text and we need a call to action
