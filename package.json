@@ -10,6 +10,7 @@
     "@atlaskit/icon": "^16.0.6",
     "@atlaskit/page": "^9.0.1",
     "@atlaskit/textfield": "^0.4.1",
+    "classnames": "^2.2.6",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",

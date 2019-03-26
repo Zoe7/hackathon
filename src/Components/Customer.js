@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import FieldText from "@atlaskit/field-text";
 import Button from "@atlaskit/button";
+import Page, { Grid, GridColumn } from "@atlaskit/page";
 
 const Customer = ({ incrementCompletionProgress }) => {
   return (
-    <>
+    <Page>
       {customersData.map((data, id) => {
         return (
           <CustomerRow
@@ -15,7 +16,7 @@ const Customer = ({ incrementCompletionProgress }) => {
           />
         );
       })}
-    </>
+    </Page>
   );
 };
 export default Customer;
@@ -37,33 +38,45 @@ const CustomerRow = ({ data, id, incrementCompletionProgress }) => {
   };
 
   return (
-    <div>
-      <FieldText
-        onChange={setBusinessId}
-        onBlur={setBusinessId}
-        label="Business Id"
-        value={state.BusinessId}
-      />
-      <FieldText
-        onChange={setVatNumber}
-        onBlur={setVatNumber}
-        label="VAT number"
-        value={state.VATNumber}
-      />
-      <FieldText
-        onChange={setIban}
-        onBlur={setIban}
-        label="IBAN"
-        value={state.IBAN}
-      />
-      <FieldText
-        onChange={setEmail}
-        onBlur={setEmail}
-        label="Email"
-        value={state.email}
-      />
-      <Button onClick={incrementCompletionProgress}>Create</Button>
-    </div>
+    <Grid>
+      <GridColumn>
+        <FieldText
+          onChange={setBusinessId}
+          onBlur={setBusinessId}
+          label="Business Id"
+          value={state.BusinessId}
+        />
+      </GridColumn>
+      <GridColumn>
+        <FieldText
+          onChange={setVatNumber}
+          onBlur={setVatNumber}
+          label="VAT number"
+          value={state.VATNumber}
+        />
+      </GridColumn>
+      <GridColumn>
+        <FieldText
+          onChange={setIban}
+          onBlur={setIban}
+          label="IBAN"
+          value={state.IBAN}
+        />
+      </GridColumn>
+      <GridColumn>
+        <FieldText
+          onChange={setEmail}
+          onBlur={setEmail}
+          label="Email"
+          value={state.email}
+        />
+      </GridColumn>
+      <GridColumn>
+        <div className="create-button">
+          <Button onClick={incrementCompletionProgress}>Create</Button>
+        </div>
+      </GridColumn>
+    </Grid>
   );
 };
 
