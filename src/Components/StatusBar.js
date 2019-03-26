@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 import Button from "@atlaskit/button";
+
 import HipchatChevronUpIcon from "@atlaskit/icon/glyph/hipchat/chevron-up";
 import HipchatChevronDownIcon from "@atlaskit/icon/glyph/hipchat/chevron-down";
 import StatusBadge from "./StatusBadge/StatusBadge";
@@ -32,21 +34,31 @@ const StatusBar = ({ link = true, completionProgress = 1 }) => {
     setVisibility(!visibility);
   };
 
+  var classes = classNames({
+    container: true,
+    "align-right": !visibility
+  });
+
   return (
     <div className="status-area">
-      <div className="container">
+      <div className={classes}>
         {visibility && (
           <>
             <div className="rank">
               <StatusBadge completionProgress={completionProgress} />
               <span className="rank-title">{rank}</span>
             </div>
-            Hello here is some text and we need a call to action
-            {link && (
-              <Button appearance="link">
-                <Link to="/customers/">setup your customers</Link>
-              </Button>
-            )}
+            <div className="rank-info">
+              Level up by setting up extra identifiable data on your customers
+              so sending and importing invoices will work smoother!
+              {link && (
+                <div>
+                  <Button className="setup-customer" appearance="primary">
+                    <Link to="/customers/">Setup your customers</Link>
+                  </Button>
+                </div>
+              )}
+            </div>
           </>
         )}
         {visibility && (

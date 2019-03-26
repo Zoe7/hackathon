@@ -6,12 +6,12 @@ import Page, { Grid, GridColumn } from "@atlaskit/page";
 const Customer = ({ incrementCompletionProgress }) => {
   return (
     <Page>
-      {customersData.map((data, id) => {
+      {customersData.map(data => {
         return (
           <CustomerRow
-            key={id}
+            key={data.key}
             data={data}
-            id={id}
+            id={data.key}
             incrementCompletionProgress={incrementCompletionProgress}
           />
         );
@@ -35,6 +35,11 @@ const CustomerRow = ({ data, id, incrementCompletionProgress }) => {
   };
   const setIban = event => {
     setState({ ...state, IBAN: event.target.value });
+  };
+
+  const handleCreate = () => {
+    customersData = customersData.filter(customer => customer.key != id);
+    incrementCompletionProgress();
   };
 
   return (
@@ -73,33 +78,37 @@ const CustomerRow = ({ data, id, incrementCompletionProgress }) => {
       </GridColumn>
       <GridColumn>
         <div className="create-button">
-          <Button onClick={incrementCompletionProgress}>Create</Button>
+          <Button onClick={handleCreate}>Create</Button>
         </div>
       </GridColumn>
     </Grid>
   );
 };
 
-const customersData = [
+let customersData = [
   {
+    key: 1,
     BusinessId: null,
     VATnumber: null,
     IBAN: null,
     email: "hello@email.com"
   },
   {
+    key: 2,
     BusinessId: 1231546,
     VATnumber: null,
     IBAN: null,
     email: null
   },
   {
+    key: 3,
     BusinessId: null,
     VATNumber: 9875331,
     IBAN: null,
     email: null
   },
   {
+    key: 4,
     BusinessId: null,
     VATNumber: null,
     IBAN: 56879797,
