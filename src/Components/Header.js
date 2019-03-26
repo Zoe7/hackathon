@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <Link to="/">Super ERP!</Link>
-        <Avatar size="large" src="C:/hackathon/src/assets/picture.jpeg" />
+        <Avatar size="large" />
       </div>
     </header>
   );

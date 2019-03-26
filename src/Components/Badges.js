@@ -1,67 +1,44 @@
 import React from "react";
 
 const Badges = () => {
-  return (    
-    <>
-     {
-       badges.map((data, id) => {
-       return (
-         <div className="container" ><img src={data.image} className="badgeImage"></img><strong>{data.name}</strong><br/><span className="smaller">{data.description}</span></div>
-       );
-     })};
-    </>);
+  return (
+    <div className="container badges">
+      {achievements.map(data => {
+        return <Achievement data={data} />;
+      })}
+    </div>
+  );
+};
+
+const Achievement = ({ data }) => {
+  const badge = badges[Math.floor(Math.random() * badges.length)];
+
+  return (
+    <div class="achievement">
+      <img src={badge} className="badgeImage" />
+      <span class="badge-description">{data}</span>
+    </div>
+  );
 };
 
 export default Badges;
 
 const badges = [
-  {
-    name: "Beginner",
-    image: "badge_blue.png"
-  },
-  {
-    name: "Intermediate",
-    image: "badge_copper.png"
-  },
-  {
-    name: "Advanced",
-    image: "badge_silver.png"
-  },
-  {
-    name: "Expert",
-    image: "badge_gold.png"
-  },
+  "badge_blue.png",
+  "badge_copper.png",
+  "badge_silver.png",
+  "badge_gold.png"
 ];
 
 const achievements = [
-  {
-    description: "Company setup data filled"
-  },
-  {
-    description: "Entered business ID on supplier"
-  },
-  {
-    description: "Entered email address on supplier"
-  },
-  {
-    description: "Entered IBAN on supplier"
-  },
-  {
-    description: "Entered VATNO on supplier"
-  },
-  {
-    description: "50% suppliers have business ID"
-  },
-  {
-    description: "80% match on imported invoice"
-  },
-  {
-    description: "Send an invoice through AutoInvoice"
-  },
-  {
-    description: "Import invoice from AutoInvoice"
-  },
-  {
-    description: "VATNO recently validated for customer"
-  }
+  "Company setup data filled",
+  "Entered business ID on supplier",
+  "Entered email address on supplier",
+  "Entered IBAN on supplier",
+  "Entered VATNO on supplier",
+  "50% suppliers have business ID",
+  "80% match on imported invoice",
+  "Send an invoice through AutoInvoice",
+  "Import invoice from AutoInvoice",
+  "VATNO recently validated for customer"
 ];
