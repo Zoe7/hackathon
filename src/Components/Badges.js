@@ -16,7 +16,7 @@ const Achievement = ({ data }) => {
   return (
     <div class="achievement">
       <img src={badge} className="badgeImage" />
-      <span class="badge-description">{data}</span>
+      <span class="">{data}</span>
     </div>
   );
 };

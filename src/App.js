@@ -26,7 +26,11 @@ const Sales = () => {
   return (
     <>
       <StatusBar />
-      <div className="container">Other random sales data</div>
+      <div className="container">
+        <div className="screenshot">
+          <img src="screenshot.jpg" />
+        </div>
+      </div>
     </>
   );
 };
