@@ -1,28 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./Components/Header";
+import StatusBar from "./Components/StatusBar";
+import Customer from "./Components/Customer";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <main>
+            <Route path="/" exact component={Sales} />
+            <Route path="/customers/" component={Customers} />
+          </main>
+        </div>
+      </Router>
     );
   }
 }
+const Sales = () => {
+  return (
+    <>
+      <StatusBar />
+      <div className="container">Other random sales data</div>
+    </>
+  );
+};
+
+const Customers = () => {
+  const [completionProgress, setCompletionProgress] = useState(1);
+
+  return (
+    <>
+      <StatusBar completionProgress={completionProgress} link={false} />
+      <Customer
+        incrementCompletionProgress={() =>
+          setCompletionProgress(completionProgress + 1)
+        }
+      />
+    </>
+  );
+};
 
 export default App;

@@ -3,9 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@atlaskit/avatar": "^15.0.1",
+    "@atlaskit/button": "^11.0.5",
+    "@atlaskit/field-text": "^8.0.1",
+    "@atlaskit/form": "^5.2.4",
+    "@atlaskit/icon": "^16.0.6",
+    "@atlaskit/page": "^9.0.1",
+    "@atlaskit/textfield": "^0.4.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8"
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
