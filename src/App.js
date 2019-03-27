@@ -28,7 +28,7 @@ const Sales = () => {
       <StatusBar />
       <div className="container">
         <div className="screenshot">
-          <img src="screenshot.jpg" />
+          <img src="screenshot.png" />
         </div>
       </div>
     </>

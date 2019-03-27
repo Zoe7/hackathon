@@ -104,3 +104,11 @@ a:hover {
 .screenshot {
   margin-top: 25px;
 }
+
+.screenshot img {
+  max-width: 1200px;
+}
+
+.setup-customer {
+  margin-top: 20px;
+}
