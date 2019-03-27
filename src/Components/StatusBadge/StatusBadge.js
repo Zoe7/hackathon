@@ -17,10 +17,12 @@ const StatusBadge = ({ completionProgress }) => {
 
   useEffect(() => {
     if (completionProgress !== 1) {
+      document.getElementById("banner").style.animation = "leaves 1s ease-in";
       setTimeout(function() {
         showFireworks();
       }, 900);
       setTimeout(function() {
+        document.getElementById("banner").style.animation = "";
         hideFireworks();
       }, 1250);
     }
